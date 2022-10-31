@@ -401,6 +401,13 @@ ul {
   background-color: black;
   border: none;
   cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #000000;
+
+  &:hover {
+    background-color: #fff;
+    color: #000000;
+  }
 }
 
 .notfound-container {

@@ -5,7 +5,12 @@ const useProducts = (URL) => {
     const [isLoading, setLoading] = useState(true)
     const [newsId, setNewsId] = useState([])
 
+    const [reloaderPage, setReloaderPage] = useState(true)
+
     useLayoutEffect(() => {
+
+        setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
+
         setLoading(true)
         fetch(URL)
             .then((res) => res.json())
@@ -13,7 +18,7 @@ const useProducts = (URL) => {
                 setNewsId((_) => json)
             })
             .then((_) => setLoading(false))
-    }, [URL])
+    }, [URL, reloaderPage])
 
     return [
         newsId, isLoading

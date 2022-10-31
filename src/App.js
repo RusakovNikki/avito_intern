@@ -1,5 +1,9 @@
 import './App.scss';
-import ShowJobs from './components/ShowJobs';
+import { Route, Routes } from "react-router-dom";
+import NotFound from './pages/NotFound';
+import AllNews from './pages/AllNews';
+import NewsPage from './pages/NewsPage';
+
 
 function App() {
   return (
@@ -7,7 +11,12 @@ function App() {
       <header className="header">
         <h1 className="title header__title rubik-light">Hacker News</h1>
       </header>
-      <ShowJobs />
+
+      <Routes>
+        <Route path="/" element={<AllNews />} />
+        <Route path="/:id" element={<NewsPage />} />
+        <Route path="*" element={<NotFound />} /> {/* в самом конце */}
+      </Routes>
     </div>
   )
 }
