@@ -1,8 +1,8 @@
 import './App.scss';
 import { Route, Routes } from "react-router-dom";
-import NotFound from './pages/NotFound';
-import AllNews from './pages/AllNews';
-import NewsPage from './pages/NewsPage';
+import ShowNews from './components/ShowNews';
+import NewsItem from './components/NewsItem';
+import NotFoundBlock from './components/NotFoundBlock'
 
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<AllNews />} />
-        <Route path="/:id" element={<NewsPage />} />
-        <Route path="*" element={<NotFound />} /> {/* в самом конце */}
+        <Route path="/" element={<ShowNews />} />
+        <Route path="/:id" element={<NewsItem />} />
+        <Route path="*" element={<NotFoundBlock />} /> {/* в самом конце */}
       </Routes>
     </div>
   )

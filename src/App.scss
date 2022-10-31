@@ -28,7 +28,7 @@ a {
 }
 
 .container {
-  width: 1196px;
+  width: 70%;
   margin: 0 auto;
 
   @media (max-width: 450px) {
@@ -42,7 +42,7 @@ ul {
 
 .jobs-container {
   &__item {
-    width: 1196px;
+    width: inherit;
     // height: 331px;
     display: flex;
     border: 1px solid black;
@@ -60,6 +60,13 @@ ul {
     &:hover {
       background-color: rgb(255, 118, 118);
       cursor: pointer;
+    }
+
+    &--nolink {
+      &:hover {
+        background-color: white;
+        cursor: default;
+      }
     }
   }
 
@@ -122,6 +129,7 @@ ul {
   }
 
   &__flex-item {
+    width: 50%;
     @media (max-width: 450px) {
       margin-top: 16px;
     }
@@ -265,7 +273,6 @@ ul {
 }
 
 .about {
-  margin-right: 400px;
   &__type {
     margin-bottom: 14px;
     font-size: 16px;
@@ -279,10 +286,31 @@ ul {
 
   &__desc {
     color: #000000;
+
+    &--font {
+      font-size: 24px;
+      font-weight: bold;
+    }
   }
 
   &__type:last-child {
     margin-bottom: 0px;
+  }
+
+  &__logo {
+    margin-bottom: -10px;
+    margin-right: 10px;
+  }
+
+  &__comment {
+    padding: 20px;
+    background-color: white;
+  }
+
+  &__container {
+    margin-left: 50px;
+    background-color: rgb(226, 226, 226);
+    padding: 20px;
   }
 }
 

@@ -8,16 +8,18 @@ const useProducts = (URL) => {
     const [reloaderPage, setReloaderPage] = useState(true)
 
     useLayoutEffect(() => {
+        async function fetchData() {
+            // setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
 
-        setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
-
-        setLoading(true)
-        fetch(URL)
-            .then((res) => res.json())
-            .then((json) => {
-                setNewsId((_) => json)
-            })
-            .then((_) => setLoading(false))
+            setLoading(true)
+            await fetch(URL)
+                .then((res) => res.json())
+                .then((json) => {
+                    setNewsId((_) => json)
+                })
+                .then((_) => setLoading(false))
+        }
+        fetchData()
     }, [URL, reloaderPage])
 
     return [
