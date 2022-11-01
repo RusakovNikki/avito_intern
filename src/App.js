@@ -3,9 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import ShowNews from './components/ShowNews';
 import NewsItem from './components/NewsItem';
 import NotFoundBlock from './components/NotFoundBlock'
+import { useState } from 'react';
 
 
 function App() {
+
+
   return (
     <div className='container'>
       <header className="header">
@@ -13,7 +16,7 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<ShowNews />} />
+        <Route path="/" element={(<ShowNews />)} />
         <Route path="/:id" element={<NewsItem />} />
         <Route path="*" element={<NotFoundBlock />} /> {/* в самом конце */}
       </Routes>

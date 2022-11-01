@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from "react"
 
 
-const useProducts = (URL) => {
+const useProducts = (URL, isRedyLoading = false, reload = false) => {
     const [isLoading, setLoading] = useState(true)
     const [newsId, setNewsId] = useState([])
 
@@ -9,7 +9,9 @@ const useProducts = (URL) => {
 
     useLayoutEffect(() => {
         async function fetchData() {
-            // setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
+            if (isRedyLoading) {
+                setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
+            }
 
             setLoading(true)
             await fetch(URL)
@@ -20,7 +22,7 @@ const useProducts = (URL) => {
                 .then((_) => setLoading(false))
         }
         fetchData()
-    }, [URL, reloaderPage])
+    }, [URL, reloaderPage, reload])
 
     return [
         newsId, isLoading
