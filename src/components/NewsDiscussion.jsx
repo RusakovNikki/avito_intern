@@ -1,22 +1,36 @@
-import React from "react"
-import Moment from "react-moment"
 import { Link, useParams } from "react-router-dom"
-import useProducts from "../hooks/products"
-import Comments from "./Comments"
-import userLogo from "../images/user.png"
-import Skeleton from "./ShowNews/Skeleton"
+import Moment from "react-moment"
+import React, { useState } from "react"
 
-const NewsItem = () => {
+import Comments from "./Comments"
+import Skeleton from "./Skeleton"
+import useItem from "../hooks/item"
+
+import userLogo from "../images/user.png"
+
+const NewsDiscussion = () => {
   const { id } = useParams()
 
-  const URL = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-  const [newsId, isLoading] = useProducts(URL)
+  const [updateComments, setUpdateComments] = useState(false)
+  const [newsId, isLoading] = useItem(id, updateComments)
 
   const comentsItem = newsId?.kids
     ? newsId?.kids.map((item) => <Comments id={item} key={item} />)
     : ""
   return (
     <>
+      <div className="jobs-container__wrapper-buttons">
+        <Link to={"/"}>
+          <button className="button button--margin">К списку новостей</button>
+        </Link>
+        <button
+          className="button button--margin"
+          onClick={() => setUpdateComments((prev) => !prev)}
+        >
+          Обновить
+        </button>
+      </div>
+
       {newsId && (
         <div className="jobs-container__item jobs-container__item--nolink">
           <div className="jobs-container__flex-item jobs-container__flex-item--width">
@@ -47,11 +61,8 @@ const NewsItem = () => {
           </div>
         </div>
       )}
-      <Link to={"/"}>
-        <button className="button">Назад</button>
-      </Link>
     </>
   )
 }
 
-export default NewsItem
+export default NewsDiscussion

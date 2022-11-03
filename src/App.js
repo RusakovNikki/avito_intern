@@ -1,13 +1,19 @@
-import './App.scss';
 import { Route, Routes } from "react-router-dom";
-import ShowNews from './components/ShowNews';
-import NewsItem from './components/NewsItem';
-import NotFoundBlock from './components/NotFoundBlock'
-import { useState } from 'react';
+import { useEffect } from "react";
+import './App.scss';
 
+import ShowNews from './components/ShowNews';
+import NotFoundBlock from './components/NotFoundBlock'
+import NewsDiscussion from './components/NewsDiscussion';
+
+import { fetchNews } from './redux/slices/newsSlice'
+import { useDispatch } from "react-redux";
 
 function App() {
-
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchNews())
+  }, [dispatch])
 
   return (
     <div className='container'>
@@ -17,7 +23,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={(<ShowNews />)} />
-        <Route path="/:id" element={<NewsItem />} />
+        <Route path="/:id" element={<NewsDiscussion />} />
         <Route path="*" element={<NotFoundBlock />} /> {/* в самом конце */}
       </Routes>
     </div>

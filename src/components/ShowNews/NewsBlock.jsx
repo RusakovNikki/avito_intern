@@ -1,12 +1,11 @@
 import React from "react"
-import useProducts from "../../hooks/products"
 import Moment from "react-moment"
 
 import userLogo from "../../images/user.png"
+import useItem from "../../hooks/item"
 
 const NewsBlock = ({ id }) => {
-  const URL_EMPLOYER = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-  const [item] = useProducts(URL_EMPLOYER)
+  const [item] = useItem(id)
 
   return (
     <>

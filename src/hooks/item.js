@@ -1,20 +1,18 @@
 import { useLayoutEffect, useState } from "react"
 
 
-const useProducts = (URL, isRedyLoading = false, reload = false) => {
+const useItem = (id, updateComments) => {
+
+    const URL_ITEM = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+
     const [isLoading, setLoading] = useState(true)
     const [newsId, setNewsId] = useState([])
 
-    const [reloaderPage, setReloaderPage] = useState(true)
-
     useLayoutEffect(() => {
         async function fetchData() {
-            if (isRedyLoading) {
-                setInterval(() => setReloaderPage(prev => !prev), 60000) //Reload page
-            }
 
             setLoading(true)
-            await fetch(URL)
+            await fetch(URL_ITEM)
                 .then((res) => res.json())
                 .then((json) => {
                     setNewsId((_) => json)
@@ -22,11 +20,11 @@ const useProducts = (URL, isRedyLoading = false, reload = false) => {
                 .then((_) => setLoading(false))
         }
         fetchData()
-    }, [URL, reloaderPage, reload])
+    }, [URL_ITEM, updateComments])
 
     return [
         newsId, isLoading
     ]
 }
 
-export default useProducts
+export default useItem
