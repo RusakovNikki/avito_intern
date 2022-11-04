@@ -4,6 +4,8 @@
 
 Сервис по поиску новостей
 
+## [Ссылка на решение в GH Pages](https://rusakovnikki.github.io/avito_intern/)
+
 ## Установка
 
 ```sh
