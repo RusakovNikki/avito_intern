@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/avito_intern/static/css/main.b2f12959.css",
+    "main.js": "/avito_intern/static/js/main.9ace6ea5.js",
+    "static/media/Roboto-Regular.woff": "/avito_intern/static/media/Roboto-Regular.31012f9b3e3da44f87e8.woff",
+    "static/media/Rubik-Regular.woff": "/avito_intern/static/media/Rubik-Regular.9b504b121d513b85cf70.woff",
+    "static/media/Rubik-Light.woff": "/avito_intern/static/media/Rubik-Light.b98975383295673ea225.woff",
+    "static/media/Formular.woff": "/avito_intern/static/media/Formular.254f9c824c206145dfc1.woff",
+    "static/media/user.png": "/avito_intern/static/media/user.30ad429f929052c48736.png",
+    "index.html": "/avito_intern/index.html",
+    "main.b2f12959.css.map": "/avito_intern/static/css/main.b2f12959.css.map",
+    "main.9ace6ea5.js.map": "/avito_intern/static/js/main.9ace6ea5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2f12959.css",
+    "static/js/main.9ace6ea5.js"
+  ]
+}
