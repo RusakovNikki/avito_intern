@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Сайт Hacker News Avito
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+Сервис по поиску новостей
 
-In the project directory, you can run:
+## Установка
 
-### `yarn start`
+```sh
+cd aito_intern-main
+yarn install
+yarn start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### yarn install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Команда для скачивания всех необходимых пакетов
 
-### `yarn test`
+### yarn install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Запускает приложение в режиме разработки.
+Откройте http://localhost:3000, чтобы просмотреть его в браузере.
 
-### `yarn build`
+## Использование
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ul Просмотр топ-100 новостей, отсортированные по новизне, где имеется:
+  - ul название
+  - ul рейтинг
+  - ul ник автора
+  - ul дата публикации
+  - ul количество комментариев
+  - ul список новостей обновляется раз в минуту без участия пользователя
+  - ul кнопка для принудительного обновления списка новостей
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* ul Переход на выбранную новость чтобы посмотреть следующие:
+  - ul ссылку на новость
+  - ul заголовок новости
+  - ul дата
+  - ul автор
+  - ul счётчик количества комментариев
+  - ul список комментариев в виде дерева
+  - ul Корневые комментарии подгружаются сразу же при входе на страницу, вложенные - по клику на корневой
+  - ul На странице имеется кнопка для принудительного обновления списка комментариев
+  - ul На странице имеется кнопка для возврата к списку новостей
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Технологии
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Redux](https://redux-toolkit.js.org/) - Библиотека для JavaScript, предназначенная для управления состоянием приложения.
+- [React](https://ru.reactjs.org/) - JavaScript-библиотека для создания пользовательских интерфейсов
+- [React Router](https://reactrouter.com/en/main) - JavaScript-библиотека для создания маршрутизации в веб-приложениях
