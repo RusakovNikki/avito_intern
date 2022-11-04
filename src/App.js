@@ -11,8 +11,12 @@ import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(fetchNews())
+    const URL = "https://hacker-news.firebaseio.com/v0/newstories.json"
+
+    dispatch(fetchNews(URL))
+
   }, [dispatch])
 
   return (

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-export const fetchNews = createAsyncThunk(
-    'news/fetchNews',
+export const fetchItem = createAsyncThunk(
+    'news/fetchItem',
     async function (URL) {
         try {
             const response = await fetch(URL)
@@ -19,7 +19,6 @@ export const fetchNews = createAsyncThunk(
 
     }
 )
-
 const initialState = {
     newsItems: [],
     isLoading: false,
@@ -31,15 +30,15 @@ export const newsSlice = createSlice({
     name: 'news',
     initialState,
     extraReducers: {
-        [fetchNews.pending]: (state) => {
+        [fetchItem.pending]: (state) => {
             state.isLoading = true
             state.error = null
         },
-        [fetchNews.fulfilled]: (state, action) => {
+        [fetchItem.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.newsItems = action.payload
+            state.item = action.payload
         },
-        [fetchNews.rejected]: (state, action) => { },
+        [fetchItem.rejected]: (state, action) => { },
     }
 })
 

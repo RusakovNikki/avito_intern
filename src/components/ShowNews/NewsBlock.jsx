@@ -1,10 +1,24 @@
-import React from "react"
+import React, { useEffect, useLayoutEffect } from "react"
 import Moment from "react-moment"
 
 import userLogo from "../../images/user.png"
 import useItem from "../../hooks/item"
 
+import { fetchItem } from "../../redux/slices/itemSlice"
+import { useDispatch, useSelector } from "react-redux"
+
 const NewsBlock = ({ id }) => {
+  // const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   const URL = `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+
+  //   dispatch(fetchItem(URL))
+  // }, [id])
+
+  // const itemM = useSelector((state) => state.item.item)
+  // console.log(itemM)
+
   const [item] = useItem(id)
 
   return (
